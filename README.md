@@ -3,18 +3,19 @@
 This is a simple application that showcases fluid masonry grid with infinite scroll feature
 
 Technologies used are:
--- HTML5,
--- CSS3 (SASS),
--- React Js
--- React Hooks (useEffect, useState, useRef, useCallback),
--- Axios,
--- public API (https://picsum.photos/v2/list),
+
+- HTML5,
+- CSS3 (SASS),
+- React Js
+- React Hooks (useEffect, useState, useRef, useCallback),
+- Axios,
+- public API (https://picsum.photos/v2/list),
 
 ## To Test this project
 
 In the project IDE, you can run:
 
-### `git clone https://github.com/Udcodes/photography-reel-app.git`
+### `git clone https://github.com/Udcodes/fluid-masonry-grid.git`
 
 The command clones the project folder from github to local machine
 
@@ -33,5 +34,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
