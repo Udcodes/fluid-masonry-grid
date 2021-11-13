@@ -1,14 +1,14 @@
-export const uniqueValues = (arr) => {
+export const uniqueValues = (data) => {
   const uniqueIds = [
     ...new Set(
-      arr.map((item) => {
+      data.map((item) => {
         return item.id;
       })
     ),
   ];
 
   return uniqueIds.map((item) => {
-    let filtered = arr.find(({ id }) => id === item);
-    return filtered || [];
+    let filteredArr = data.find(({ id }) => id === item);
+    return filteredArr || [];
   });
 };

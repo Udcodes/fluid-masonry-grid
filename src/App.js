@@ -25,10 +25,10 @@ const App = () => {
 
   const handleChange = (e) => {
     setSelectedValue(e.target.value);
-    filterData(selectedValue);
+    filterDataBySelectedValue(selectedValue);
   };
 
-  const fetchData = useCallback(
+  const fetchDataFromApi = useCallback(
     async (page) => {
       try {
         let response = await axios.get(
@@ -49,27 +49,27 @@ const App = () => {
     [dataArr]
   );
 
-  const filterData = (value) => {
+  const filterDataBySelectedValue = (value) => {
     switch (value) {
       case 20:
         setPageNumber(2);
-        fetchData(2);
+        fetchDataFromApi(2);
         break;
       case 30:
         setPageNumber(3);
-        fetchData(3);
+        fetchDataFromApi(3);
         break;
       case 40:
         setPageNumber(4);
-        fetchData(4);
+        fetchDataFromApi(4);
         break;
       case 50:
         setPageNumber(5);
-        fetchData(5);
+        fetchDataFromApi(5);
         break;
       default:
         setPageNumber(1);
-        fetchData(1);
+        fetchDataFromApi(1);
         break;
     }
   };
@@ -84,9 +84,9 @@ const App = () => {
 
     if (documentHeight === currentScroll && dataArr.length < selectedValue) {
       setLoadingMore(true);
-      fetchData(selectedValue);
+      fetchDataFromApi(selectedValue);
     }
-  }, [dataArr?.length, selectedValue, fetchData]);
+  }, [dataArr?.length, selectedValue, fetchDataFromApi]);
 
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
@@ -97,7 +97,7 @@ const App = () => {
   }, [handleScroll]);
 
   useEffect(() => {
-    fetchData(pageNumber);
+    fetchDataFromApi(pageNumber);
   }, [pageNumber]);
 
   if (error) return error;
