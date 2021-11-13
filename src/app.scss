@@ -1,0 +1,59 @@
+.app {
+  margin: 0 auto;
+  padding: 10em;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "dropdown main-container main-container main-container";
+  grid-gap: 5rem;
+  text-align: center;
+}
+.drop-down {
+  padding: 20px;
+  background: white;
+  position: fixed;
+  grid-area: dropdown;
+}
+.main-container {
+  grid-area: main-container;
+}
+
+.photo-list {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  display: grid;
+  grid-area: auto;
+  grid-column: auto;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.loading-more {
+  padding: 60px;
+}
+
+@media only screen and (max-width: 1150px) {
+  .app {
+    grid-gap: 0;
+    padding: 4em;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-areas: "dropdown main-container";
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .app {
+    grid-gap: 0;
+    padding: 5em;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "dropdown"
+      "main-container"
+      "main-container"
+      "main-container";
+  }
+  .drop-down {
+    z-index: 100;
+    position: sticky;
+    top: 0;
+  }
+}
